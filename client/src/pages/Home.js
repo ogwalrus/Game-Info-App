@@ -3,10 +3,13 @@ import { useQuery } from '@apollo/client';
 
 import ThoughtList from '../components/ThoughtList';
 import ThoughtForm from '../components/ThoughtForm';
+import callApi from '../utils/apiCall';
+import GameBox from '../components/GameBox';
 
 import { QUERY_THOUGHTS } from '../utils/queries';
 
 const Home = () => {
+  
   const { loading, data } = useQuery(QUERY_THOUGHTS);
   const thoughts = data?.thoughts || [];
 
@@ -23,10 +26,14 @@ const Home = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
+            <>
+            <GameBox games={callApi()}/>
             <ThoughtList
               thoughts={thoughts}
-              title="Some Feed for Thought(s)..."
-            />
+              title="Some Feed for Thought(s)..."/>
+
+              </>
+            
           )}
         </div>
       </div>
