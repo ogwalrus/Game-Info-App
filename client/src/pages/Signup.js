@@ -53,7 +53,7 @@ const Signup = () => {
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="Your username"
+                  placeholder="Username"
                   name="username"
                   type="text"
                   value={formState.name}
@@ -61,7 +61,7 @@ const Signup = () => {
                 />
                 <input
                   className="form-input"
-                  placeholder="Your email"
+                  placeholder="Email"
                   name="email"
                   type="email"
                   value={formState.email}
@@ -69,7 +69,7 @@ const Signup = () => {
                 />
                 <input
                   className="form-input"
-                  placeholder="******"
+                  placeholder="Password"
                   name="password"
                   type="password"
                   value={formState.password}
