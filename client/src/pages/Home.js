@@ -1,65 +1,52 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-
+import { useState, useEffect } from 'react';
 import ThoughtList from '../components/ThoughtList';
 import ThoughtForm from '../components/ThoughtForm';
-
+import search from '../utils/apiCall';
 import GameBox from '../components/GameBox';
 
 import { QUERY_THOUGHTS } from '../utils/queries';
 
 
-async function callApi() {
-  return fetch(`https://api.rawg.io/api/games?key=a7bb8bf23e8e49069c1db32e3addcc4d`, {
-    method: 'GET',
-    headers: { 'content-type': 'application/json' },
 
-  })
-    .then((response) => response.json().then((json) => ({ json, response })))
-    .then(({ json, response }) => {
-      if (!response.ok) {
-        return Promise.reject(json);
-      }
-      
-      return json;
-    })
-    .then(
-        (response) => ({ response }),
-        (error) => ({ error: error.message || 'Something bad happened' })
-      
-    );
-}
 
-async function Home(){
-  const apiData = await callApi();
-  const gameObject = apiData.response.results;
-  let gameArray = [];
-  for(const game of gameObject){
-    gameArray.push(game);
-  }
-  console.log(typeof gameObject);
-  console.log(typeof gameArray);
+function Home(){
+  
+  
+  const [results, setResults] = useState([]);
   const { loading, data } = useQuery(QUERY_THOUGHTS);
   const thoughts = data?.thoughts || [];
+  const callApi = async () => {
+    const response = await search();
+    const data = await response.data;
+    console.log(data);
+    setResults(data.results);
+  }
+
+  useEffect(() => {
+    callApi();
+  }, []);
 
   return (
     <main>
       <div className="flex-row justify-center">
-        {/* <div
+        <div
           className="col-12 col-md-10 mb-3 p-3"
           style={{ border: '1px dotted #1a1a1a' }}
         >
           <ThoughtForm />
-        </div> */}
+        </div>
         <div className="col-12 col-md-8 mb-3">
           {loading ? (
             <div>Loading...</div>
           ) : (
             <>
-            <GameBox games={gameObject}/>
-            <ThoughtList
+            
+            {/* <ThoughtList
               thoughts={thoughts}
-              title="Some Feed for Thought(s)..."/>
+              title="Some Feed for Thought(s)..."/> */}
+              <GameBox games={results}/>
 
               </>
             
