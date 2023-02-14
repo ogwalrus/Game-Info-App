@@ -3,13 +3,42 @@ import { useQuery } from '@apollo/client';
 
 import ThoughtList from '../components/ThoughtList';
 import ThoughtForm from '../components/ThoughtForm';
-import callApi from '../utils/apiCall';
+
 import GameBox from '../components/GameBox';
 
 import { QUERY_THOUGHTS } from '../utils/queries';
 
-const Home = () => {
-  
+
+async function callApi() {
+  return fetch(`https://api.rawg.io/api/games?key=a7bb8bf23e8e49069c1db32e3addcc4d`, {
+    method: 'GET',
+    headers: { 'content-type': 'application/json' },
+
+  })
+    .then((response) => response.json().then((json) => ({ json, response })))
+    .then(({ json, response }) => {
+      if (!response.ok) {
+        return Promise.reject(json);
+      }
+      
+      return json;
+    })
+    .then(
+        (response) => ({ response }),
+        (error) => ({ error: error.message || 'Something bad happened' })
+      
+    );
+}
+
+async function Home(){
+  const apiData = await callApi();
+  const gameObject = apiData.response.results;
+  let gameArray = [];
+  for(const game of gameObject){
+    gameArray.push(game);
+  }
+  console.log(typeof gameObject);
+  console.log(typeof gameArray);
   const { loading, data } = useQuery(QUERY_THOUGHTS);
   const thoughts = data?.thoughts || [];
 
@@ -27,7 +56,7 @@ const Home = () => {
             <div>Loading...</div>
           ) : (
             <>
-             {/* <GameBox games={callApi()}/>  */}
+            <GameBox games={gameObject}/>
             <ThoughtList
               thoughts={thoughts}
               title="Some Feed for Thought(s)..."/>
