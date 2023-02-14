@@ -1330,6 +1330,16 @@ label form [type='radio'] {
   max-width: 100%;
 }
 
+.card-img {
+  width: 100%;
+  height: auto;
+  zoom: 1.5;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
 /* col-sm */
 @media screen and (min-width: 640px) {
   .col-sm-auto {
