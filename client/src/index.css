@@ -1110,22 +1110,6 @@ a:hover {
   height: 2rem;
 }
 
-.card .card-body {
-  padding: 0.400rem;
-}
-
-.card-box {
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 15% 50% 50% 50% 5%;
-  grid-auto-rows: minmax(50px, auto);
-  grid-gap: 1em;
-  margin: 1em;
-  /* padding-top: 85px; */
-  margin-top: 50px;
-}
-
-
 .card-text {
   /* font-size: 1.2rem; */
   margin: 1rem;
