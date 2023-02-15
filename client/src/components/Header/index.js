@@ -1,31 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import GameSearch from '../../pages/SearchResults';
+
 import Auth from '../../utils/auth';
-import { useState } from 'react';
 
 
 const Header = () => {
-  const [searchInput, setSearchInput] = useState("");
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearchInput(e.target.value);
-  };
+  const [searchedGames, setSearchedGames] = useState('');
 
-  const handleSearch = () => {
-    window.location.href = `/search/${searchInput}`;
-  }
+  const handleInputChange = (event) => {
+    setSearchedGames(event.target.value);
+  };
   return (
 
     <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
-            <h1 className="m-0">4RealGamerz</h1>
+            <h1 className="m-0"><img className='icon-img' src='https://icon-library.com/images/mix_color_5__game-512_97495.png'></img>4RealGamerz</h1>
           </Link>
           <p className="m-0">Get into the mind of a gamer.</p>
         </div>
@@ -50,15 +47,19 @@ const Header = () => {
             </>
           )}
         </div>
+        <form>
         <div class="input-group">
           <div class="form-outline">
-            <input id="search-input" type="search" onChange={handleChange} onSubmit={handleSearch} class="form-control" />
-            <label class="form-label" for="form1">Search</label>
+            <input type="text" id="searchInput" class="form-control" value={searchedGames} onChange={handleInputChange} />
+            <label class="form-label" for="searchInput">Search</label>  
           </div>
-          <button id="search-button" type="button" class="btn btn-primary">
+          <Link to={`/search/${searchedGames}`}>
+          <button type="submit" class="btn btn-primary">
             <i class="fas fa-search"></i>
           </button>
+          </Link>
         </div>
+      </form>
       </div>
     </header>
   );

@@ -44,28 +44,25 @@ function Game() {
     }
     return (
         <main>
-            <div className="card mb-3">
+            <div className="card-desc mb-3">
                 <h4 className='card-header bg-primary text-light p-2 m-0'>
                     {results.name}
                 </h4>
                 <div className="card-body">
                     <img className="card-img" src={results.background_image} alt="Card image"></img>
+                    <p className='card-text'>Description: 
+                        <br/>
+                        {results.description_raw}
+                    </p>
+
+                    <a className="card-text" href={results.website} target='_blank'> Website: {results.website}</a>
+                    
                     <p className="card-text">Rating: {results.rating}/{results.rating_top}</p>
                     <p className="card-text">Release Date: {results.released}</p>
                     <p className="card-text">Playtime: {results.playtime}</p>
                     <p className="card-text">Metacritic: {results.metacritic}</p>
                     <p className='card-text'>Where to buy:<br/> {printStores(results.stores)}</p>
 
-                    
-                    <a href={results.website} target='_blank'>Website: {results.website}</a>
-                    {/* <p className="card-text">Website: {results.website}</p> */}
-
-
-
-                    <p className='description'>
-                        <br/>
-                        {results.description_raw}
-                    </p>
                 </div>
             </div>
         </main>

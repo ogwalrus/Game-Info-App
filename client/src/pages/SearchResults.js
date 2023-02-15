@@ -16,7 +16,7 @@ function GameSearch(){
     }
     useEffect(() => {
         callApi();
-    }, []);
+    }, [gameName]);
     return (
         <main>
             <div className="flex-row justify-center">

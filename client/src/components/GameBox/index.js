@@ -8,7 +8,7 @@ const GameBox = ({
     return (
         <div className='row'>
             {games &&
-                games.map((game) => (
+                games.sort((a, b) => (a.ratings_count > b.ratings_count) ? -1 : 1).map((game) => (
 
                     <Link to={`/${game.id}`}>
                         <div className='card mb-3'>
