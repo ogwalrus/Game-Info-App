@@ -11,7 +11,7 @@ const GameBox = ({
                 games.sort((a, b) => (a.ratings_count > b.ratings_count) ? -1 : 1).map((game) => (
 
                     <Link to={`/${game.id}`}>
-                        <div className='card mb-3'>
+                        <div key={game.id} className='card mb-3'>
                             <h4 className='card-header bg-primary text-light p-2 m-0'>
                                 {game.name}
                             </h4>

@@ -26,7 +26,7 @@ function Game() {
         
         return stores.map((store) => (
             
-            <a href={'https://' + store.store.domain} target="_blank">{store.store.name}<br/></a>
+            <a key={store.store.id}href={'https://' + store.store.domain} target="_blank">{store.store.name}<br/></a>
         ))
 
     }
