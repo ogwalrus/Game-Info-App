@@ -22,7 +22,14 @@ function Game() {
         console.log(data);
         setResults(data);
     }
-    
+    const printStores = (stores) => {
+        
+        return stores.map((store) => (
+            
+            <a href={'https://' + store.store.domain} target="_blank">{store.store.name}<br/></a>
+        ))
+
+    }
     
     useEffect(() => {
         callApi();
@@ -31,9 +38,7 @@ function Game() {
     if(!results.name){
         return (
             <main>
-                <div className="404">
-                    Game does not exist
-                </div>
+                <h1 className="display-1">Game with id {gameId} is not found</h1>
             </main>
         );
     }
@@ -49,7 +54,7 @@ function Game() {
                     <p className="card-text">Release Date: {results.released}</p>
                     <p className="card-text">Playtime: {results.playtime}</p>
                     <p className="card-text">Metacritic: {results.metacritic}</p>
-                    <p className='card-text'>Where to buy: </p>
+                    <p className='card-text'>Where to buy:<br/> {printStores(results.stores)}</p>
 
                     
                     <a href={results.website} target='_blank'>Website: {results.website}</a>
@@ -58,6 +63,7 @@ function Game() {
 
 
                     <p className='description'>
+                        <br/>
                         {results.description_raw}
                     </p>
                 </div>
