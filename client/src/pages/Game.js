@@ -28,6 +28,15 @@ function Game() {
         callApi();
     }, []);
     console.log(results.stores)
+    if(!results.name){
+        return (
+            <main>
+                <div className="404">
+                    Game does not exist
+                </div>
+            </main>
+        );
+    }
     return (
         <main>
             <div className="card mb-3">

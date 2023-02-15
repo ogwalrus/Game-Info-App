@@ -10,7 +10,8 @@ const GameBox = ({
             {games &&
                 games.map((game) => (
 
-
+                    <Link to={`/${game.id}`}>
+                        <div className='card mb-3'>
                             <h4 className='card-header bg-primary text-light p-2 m-0'>
                                 {game.name}
                             </h4>
