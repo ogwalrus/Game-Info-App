@@ -47,7 +47,7 @@ function Home(){
             {/* <ThoughtList
               thoughts={thoughts}
               title="Some Feed for Thought(s)..."/> */}
-              <GameBox games={results}/>
+              <GameBox games={results.sort((a, b) => (a.ratings_count > b.ratings_count) ? -1 : 1)}/>
 
               </>
             
