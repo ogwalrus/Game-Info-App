@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import GameSearch from '../../pages/SearchResults';
 
 import Auth from '../../utils/auth';
 
@@ -8,6 +9,12 @@ const Header = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
+  };
+
+  const [searchedGames, setSearchedGames] = useState('');
+
+  const handleInputChange = (event) => {
+    setSearchedGames(event.target.value);
   };
   return (
 
@@ -40,15 +47,19 @@ const Header = () => {
             </>
           )}
         </div>
+        <form>
         <div class="input-group">
           <div class="form-outline">
-            <input type="search" id="form1" class="form-control" />
-            <label class="form-label" for="form1">Search</label>
+            <input type="text" id="searchInput" class="form-control" value={searchedGames} onChange={handleInputChange} />
+            <label class="form-label" for="searchInput">Search</label>  
           </div>
-          <button type="button" class="btn btn-primary">
+          <Link to={`/search/${searchedGames}`}>
+          <button type="submit" class="btn btn-primary">
             <i class="fas fa-search"></i>
           </button>
+          </Link>
         </div>
+      </form>
       </div>
     </header>
   );
