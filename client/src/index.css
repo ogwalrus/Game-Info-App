@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -1083,18 +1086,26 @@ a:hover {
 }
 
 .card {
+  /* display: flex; */
   border: 1px solid #1a1a1a;
-  margin-bottom: 1rem;
+  margin: 1rem;
+  width: 20rem;
+
+
+
+  /* border-radius: 1rem; */
 }
 
 .card .card-header {
   padding: 0.375rem;
   background-color: #2d3e50;
   color: #d9e9e8;
+  /* border-radius: 1rem; */
 }
 
 .card .card-body {
   padding: 0.375rem;
+
 }
 
 .card .card-footer {
