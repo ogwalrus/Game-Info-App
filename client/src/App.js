@@ -16,6 +16,7 @@ import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Game from './pages/Game';
+import GameSearch from './pages/SearchResults';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -77,6 +78,11 @@ function App() {
                 path="/:gameId"
                 element={<Game />}
               />
+              <Route
+                path="/search/:gameName"
+                element={<GameSearch />}
+              />
+
             </Routes>
           </div>
           <Footer />
