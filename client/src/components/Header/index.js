@@ -1,14 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import Auth from '../../utils/auth';
+import { useState } from 'react';
 
 
 const Header = () => {
+  const [searchInput, setSearchInput] = useState("");
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchInput(e.target.value);
+  };
+
+  const handleSearch = () => {
+    window.location.href = `/search/${searchInput}`;
+  }
   return (
 
     <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
@@ -42,10 +52,10 @@ const Header = () => {
         </div>
         <div class="input-group">
           <div class="form-outline">
-            <input type="search" id="form1" class="form-control" />
+            <input id="search-input" type="search" onChange={handleChange} onSubmit={handleSearch} class="form-control" />
             <label class="form-label" for="form1">Search</label>
           </div>
-          <button type="button" class="btn btn-primary">
+          <button id="search-button" type="button" class="btn btn-primary">
             <i class="fas fa-search"></i>
           </button>
         </div>
