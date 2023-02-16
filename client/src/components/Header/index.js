@@ -48,18 +48,19 @@ const Header = () => {
           )}
         </div>
         <form>
-        <div class="input-group">
-          <div class="form-outline">
-            <input type="text" id="searchInput" class="form-control" value={searchedGames} onChange={handleInputChange} />
-            <label class="form-label" for="searchInput">Search</label>  
+          <div className="input-group">
+            <div className="form-outline">
+              <input type="text" id="searchInput" className="form-control" value={searchedGames} onChange={handleInputChange} />
+              <label className="form-label" htmlFor="searchInput"></label>
+              <Link to={`/search/${searchedGames}`}>
+                <button type="submit" className="btn btn-primary">
+                  <i className="fas fa-search">Search</i>
+                </button>
+              </Link>
+            </div>
+
           </div>
-          <Link to={`/search/${searchedGames}`}>
-          <button type="submit" class="btn btn-primary">
-            <i class="fas fa-search"></i>
-          </button>
-          </Link>
-        </div>
-      </form>
+        </form>
       </div>
     </header>
   );
