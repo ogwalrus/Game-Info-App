@@ -64,9 +64,9 @@ const ThoughtForm = () => {
     <div>
       <h3>Add games to you wishlist!</h3>
 
-      {/* {Auth.loggedIn() ? (
+      {Auth.loggedIn() ? (
         <>
-          <p
+          {/* <p
             className={`m-0 ${
               characterCount === 280 || error ? 'text-danger' : ''
             }`}
@@ -98,18 +98,18 @@ const ThoughtForm = () => {
                 {error.message}
               </div>
             )}
-          </form>
+          </form> */}
         </>
       ) : (
         <p>
           You must signup or login to add to yuor wishlist. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
-      )} */}
-              <p>
+      )}
+              {/* <p>
           You must signup or login to add to yuor wishlist. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
-        </p>
+        </p> */}
     </div>
   );
 };
