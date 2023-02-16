@@ -6,11 +6,7 @@ const GameBox = ({
     games,
 }) => {
     return (
-<<<<<<< HEAD
-
-=======
         <div className='container-main'>
->>>>>>> 80570cd582985d138d93640c8ea2bcee21008435
         <div className='row'>
             {games &&
                 games.sort((a, b) => (a.ratings_count > b.ratings_count) ? -1 : 1).map((game) => (
@@ -40,7 +36,6 @@ const GameBox = ({
 
         </div>
         </div>
-
 
     )
 
