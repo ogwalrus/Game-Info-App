@@ -6,13 +6,17 @@ const GameBox = ({
     games,
 }) => {
     return (
+<<<<<<< HEAD
 
+=======
+        <div className='container-main'>
+>>>>>>> 80570cd582985d138d93640c8ea2bcee21008435
         <div className='row'>
             {games &&
                 games.sort((a, b) => (a.ratings_count > b.ratings_count) ? -1 : 1).map((game) => (
 
                     <Link to={`/${game.id}`}>
-                        <div key={game.id} className='card mb-3'>
+                        <div key={game.id} className='card-main mb-3'>
                             <h4 className='card-header bg-primary text-light p-2 m-0'>
                                 {game.name}
                             </h4>
@@ -34,6 +38,7 @@ const GameBox = ({
                     </Link>
                 ))}
 
+        </div>
         </div>
 
 

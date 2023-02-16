@@ -1275,12 +1275,46 @@ label form [type='radio'] {
 }
 
 .row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 35% 35% 35% 35%;
+  grid-auto-rows: minmax(5rem, auto);
+  grid-gap: 1em;
+  margin: 1em;
+  /* padding-top: 85px; */
+  margin-top: 5rem;
+  justify-content: center;
+  /* display: flex; */
+  flex-wrap: wrap; 
+ 
+
+}
+
+/* .container-main {
+  display: grid;
+  grid-template-columns: 35% 35% 35% 35%;
+  grid-template-rows: 5% 5% 5% 5% 5%;
+  grid-auto-rows: minmax(50px, auto);
+  grid-gap: 1em;
+  margin: 1em;
+  /* padding-top: 85px; */
+  /* margin-top: 50px; */
+/* } */ 
+
+.card-main {
+  justify-self: center;
+  border: 1px solid #030303;
+  transition: transform 0.2s;
+  width: 100%;
+  height: 100%;
+  /* margin: 10rem; */
+  /* margin-bottom: 5rem; */
+}
+
+  /* display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   margin-left: -15px;
-  margin-right: -15px;
-}
+  margin-right: -15px; */
 
 [class*='col-'] {
   position: relative;
@@ -1360,7 +1394,7 @@ label form [type='radio'] {
   zoom: 1.5;
 }
 
-.card:hover {
+.card-main:hover {
   transform: scale(1.05);
 }
 
