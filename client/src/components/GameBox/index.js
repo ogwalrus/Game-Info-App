@@ -25,7 +25,7 @@ const GameBox = ({
                                 <p className="card-text">Platforms: {game.platforms.map((platform) => (
                                     <span key={platform.platform.id}>{platform.platform.name}, </span>
                                 ))}</p>
-                                <p>Click for more Info</p>
+                                <p className="card-text">Click for more Info</p>
 
 
 
