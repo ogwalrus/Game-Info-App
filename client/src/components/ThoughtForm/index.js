@@ -62,9 +62,9 @@ const ThoughtForm = () => {
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>Add games to you wishlist!</h3>
 
-      {Auth.loggedIn() ? (
+      {/* {Auth.loggedIn() ? (
         <>
           <p
             className={`m-0 ${
@@ -102,10 +102,14 @@ const ThoughtForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your thoughts. Please{' '}
+          You must signup or login to add to yuor wishlist. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
-      )}
+      )} */}
+              <p>
+          You must signup or login to add to yuor wishlist. Please{' '}
+          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+        </p>
     </div>
   );
 };
