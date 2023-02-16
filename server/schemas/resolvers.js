@@ -48,6 +48,17 @@ const resolvers = {
 
       return { token, user };
     },
+    addWishlist: async (parent, { gameId }, context) => {
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { wishlist: gameId } },
+          { new: true }
+          );
+        }
+        throw new AuthenticationError('You need to be logged in!');
+      },
+
     addThought: async (parent, { thoughtText }, context) => {
       if (context.user) {
         const thought = await Thought.create({
@@ -116,5 +127,7 @@ const resolvers = {
     },
   },
 };
+
+
 
 module.exports = resolvers;

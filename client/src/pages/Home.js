@@ -31,12 +31,12 @@ function Home(){
   return (
     <main>
       <div className="card-box flex-row justify-center">
-        {/* <div
+        <div
           className="col-12 col-md-10 mb-3 p-3"
           style={{ border: '1px dotted #1a1a1a' }}
         >
           <ThoughtForm />
-        </div> */}
+        </div>
         <p>These are some of the most popular games being played.</p>
         <div className="col-12 col-md-8 mb-3">
           {loading ? (

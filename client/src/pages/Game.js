@@ -8,11 +8,13 @@ import GameBox from '../components/GameBox';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-
+import { ADD_WISHLIST } from '../utils/mutations';
 import { QUERY_THOUGHTS } from '../utils/queries';
 import searchGame from '../utils/gameCall';
+import { useMutation } from '@apollo/client';
 
 function Game() {
+    const [ addWishlist, { error } ] = useMutation(ADD_WISHLIST);
     const { gameId } = useParams();
     console.log(gameId);
     const [results, setResults] = useState([]);
@@ -35,6 +37,17 @@ function Game() {
         callApi();
     }, []);
     console.log(results.stores)
+    async function handleClick () {
+        try {
+            const { data } = await addWishlist({
+                variables: { gameId: gameId }
+            });
+            console.log(data);
+        } catch (e) {
+            // console.error(e);
+        }
+    }
+    
     if(!results.name){
         return (
             <main>
@@ -62,6 +75,7 @@ function Game() {
                     <p className="card-text">Playtime: {results.playtime}</p>
                     <p className="card-text">Metacritic: {results.metacritic}</p>
                     <p className='card-text'>Where to buy:<br/> {printStores(results.stores)}</p>
+                    <button className='btn-danger btn' onClick={ handleClick }>Add to Wishlist</button>
 
                 </div>
             </div>
