@@ -1024,7 +1024,7 @@ a:hover {
 }
 
 .btn.btn-danger {
-  background-color: #3A3A3A;
+  background-color: #107C10;
   color: #ffffff;
 }
 
@@ -1189,6 +1189,17 @@ form [type='radio'] {
 label form [type='checkbox'],
 label form [type='radio'] {
   display: inline-block;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  color: #ffffff;
+  background-color: #3A3A3A;
+  margin: 0.625rem 0;
+  font-size: 1.2rem;
+  border: 1px solid #484848;
+  border-radius: 0.3rem;
 }
 
 .container {
