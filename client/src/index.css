@@ -1014,21 +1014,21 @@ a:hover {
 }
 
 .btn.btn-primary {
-  background-color: #107C10;
+  background-color: #3A3A3A;
   color: #d9e9e8;
 }
 
 .btn.btn-primary:hover {
-  background-color: #3A3A3A;
+  background-color: #484848;
 }
 
 .btn.btn-danger {
-  background-color: #e64c66;
+  background-color: #3A3A3A;
   color: #ffffff;
 }
 
 .btn.btn-danger:hover {
-  background-color: #ee8294;
+  background-color: #484848;
 }
 
 .btn.btn-info {
@@ -1037,7 +1037,7 @@ a:hover {
 }
 
 .btn.btn-info:hover {
-  background-color: #a590d7;
+  background-color: #484848;
 }
 
 .btn.btn-light {
@@ -1046,61 +1046,61 @@ a:hover {
 }
 
 .btn.btn-light:hover {
-  background-color: #a590d7;
+  background-color: #484848;
 }
 
 .btn.btn-dark {
-  background-color: #1a1a1a;
+  background-color: #3A3A3A;
   color: #d9e9e8;
 }
 
 .btn.btn-dark:hover {
-  background-color: #5f5f5f;
+  background-color: #484848;
 }
 
 .btn.btn-white {
-  background-color: #ffffff;
+  background-color: #3A3A3A;
   color: #1a1a1a;
 }
 
 .btn.btn-white:hover {
-  background-color: #cccccc;
+  background-color: #484848;
 }
 
 .btn.btn-black {
-  background-color: #000000;
+  background-color: #3A3A3A;
   color: #ffffff;
 }
 
 .btn.btn-black:hover {
-  background-color: #666666;
+  background-color: #484848;
 }
 
 .btn.btn-link {
-  background-color: #1b89bc;
+  background-color: #ffffff;
   color: #ffffff;
 }
 
 .btn.btn-link:hover {
-  background-color: #31a9e1;
+  background-color: #ffffff;
 }
 
 .card {
   /* display: flex; */
-  border: 1px solid #1a1a1a;
+  border: 1px solid #3A3A3A;
   margin: 1rem;
   width: 20rem;
 }
 
 .card-desc {
   width:70rem;
-  border: 1px solid #1a1a1a;
+  border: 1px solid #3A3A3A;
   
 }
 
 .card .card-header {
   padding: 0.375rem;
-  background-color: #2d3e50;
+  background-color: #3A3A3A;
   color: #d9e9e8;
   /* border-radius: 1rem; */
 }
@@ -1168,8 +1168,8 @@ form .form-label {
 form .form-input {
   width: 100%;
   padding: 0.75rem;
-  color: #1a1a1a;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #3A3A3A;
   margin: 0.625rem 0;
   font-size: 1.2rem;
   border: 1px solid #484848;
