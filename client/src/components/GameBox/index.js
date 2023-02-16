@@ -6,6 +6,7 @@ const GameBox = ({
     games,
 }) => {
     return (
+
         <div className='row'>
             {games &&
                 games.sort((a, b) => (a.ratings_count > b.ratings_count) ? -1 : 1).map((game) => (
@@ -34,6 +35,7 @@ const GameBox = ({
                 ))}
 
         </div>
+
 
     )
 

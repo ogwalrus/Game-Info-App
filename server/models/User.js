@@ -25,6 +25,13 @@ const userSchema = new Schema({
       ref: 'Thought',
     },
   ],
+  wishlist: [
+    {
+      type: Number,
+      required: true,
+      
+    }
+  ],
 });
 
 userSchema.pre('save', async function (next) {
