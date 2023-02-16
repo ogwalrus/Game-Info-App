@@ -50,7 +50,7 @@ const Header = () => {
         <form>
           <div className="input-group">
             <div className="form-outline">
-              <input type="text" id="searchInput" className="form-control" value={searchedGames} onChange={handleInputChange} />
+              <input type="text" id="searchInput" className="form-control" placeholder='Enter Game Here' value={searchedGames} onChange={handleInputChange} />
               <label className="form-label" htmlFor="searchInput"></label>
               <Link to={`/search/${searchedGames}`}>
                 <button type="submit" className="btn btn-primary">

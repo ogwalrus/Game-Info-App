@@ -74,8 +74,8 @@ function Game() {
                     <p className="card-text">Release Date: {results.released}</p>
                     <p className="card-text">Playtime: {results.playtime}</p>
                     <p className="card-text">Metacritic: {results.metacritic}</p>
-                    <p className='card-text'>Where to buy:<br/> {printStores(results.stores)}</p>
-                    <button className='btn-danger btn' onClick={ handleClick }>Add to Wishlist</button>
+                    <p className='card-text '>Where to buy:<br/> <p className='btn btn-primary'>{printStores(results.stores)}</p></p>
+                    <button className='btn btn-danger ' onClick={ handleClick }>Add to Wishlist</button>
 
                 </div>
             </div>
