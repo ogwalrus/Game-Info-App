@@ -43,19 +43,8 @@ const Profile = () => {
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
-          {/* <ThoughtList
-            thoughts={user.thoughts}
-            title={`${user.username}'s thoughts...`}
-            showTitle={false}
-            showUsername={false}
-          />
-        </div>
-        {!userParam && (
-          <div
-            className="col-12 col-md-10 mb-3 p-3"
-            style={{ border: '1px dotted #1a1a1a' }}
-          >
-            <ThoughtForm /> */}
+          These are the games you have in your wishlist:
+          
           </div>
         {/* )} */}
       </div>
