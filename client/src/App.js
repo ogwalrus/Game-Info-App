@@ -87,7 +87,7 @@ function App() {
           </div>
           <footer className='footer'>
   <p>
-    <a href="https://github.com/ogwalrus/Game-Info-App">Created by: Tom, Isaac, Mekael, and Nick</a>
+    <a className='btn btn-primary' href="https://github.com/ogwalrus/Game-Info-App">Created by: Tom, Isaac, Mekael, and Nick</a>
   </p>
   <p><a href='https://www.youtube.com/watch?v=tHYJWn2jLaM'>Customer Support</a></p>
 </footer>
