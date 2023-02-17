@@ -58,7 +58,7 @@ function Game() {
     if (!Auth.loggedIn()){
         return (
             <main>
-                <h1 className="display-1" style={{color: 'green'}}>You must be logged in to view game data and add to your wishlist!</h1>
+                <h1 className="display-1" style={{color: 'green'}}>You must be logged in to view game information!</h1>
             </main>
         );
     }
