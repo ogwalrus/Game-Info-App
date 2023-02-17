@@ -18,7 +18,7 @@ const GameBox = ({
                             </h4>
                             <div className="card-body">
                                 <img className="card-img" src={game.background_image} alt="Card image"></img>
-                                <p className="card-text">Rating: {game.rating}</p>
+                                <p className="card-text">Rating: {game.rating}/{game.rating_top}</p>
                                 <p className="card-text">Release Date: {game.released}</p>
                                 <p className="card-text">Playtime: {game.playtime}</p>
                                 <p className="card-text">Metacritic: {game.metacritic}</p>
