@@ -14,7 +14,7 @@ import searchGame from '../utils/gameCall';
 import { useMutation } from '@apollo/client';
 
 function Game() {
-    const [ addWishlist, { error } ] = useMutation(ADD_WISHLIST);
+    // const [ addWishlist, { error } ] = useMutation(ADD_WISHLIST);
     const { gameId } = useParams();
     console.log(gameId);
     const [results, setResults] = useState([]);
@@ -37,15 +37,15 @@ function Game() {
         callApi();
     }, []);
     console.log(results.stores)
-    async function handleClick () {
-        try {
-            const { data } = await addWishlist({
-                variables: { gameId: gameId }
-            });
-            console.log(data);
-        } catch (e) {
-        }
-    }
+    // async function handleClick () {
+    //     try {
+    //         const { data } = await addWishlist({
+    //             variables: { gameId: gameId }
+    //         });
+    //         console.log(data);
+    //     } catch (e) {
+    //     }
+    // }
     
     if(!results.name){
         return (
@@ -73,8 +73,8 @@ function Game() {
                     <p className="card-text">Release Date : {results.released}</p>
                     <p className="card-text">Playtime : {results.playtime}</p>
                     <p className="card-text">Metacritic : {results.metacritic}</p>
-                    <p className='card-text '>Where to buy :<br/> <p className='btn btn-primary'>{printStores(results.stores)}</p></p>
-                    <button className='btn btn-danger ' onClick={ handleClick }>Add to Wishlist</button>
+                    <p className='card-text'>Where to buy :<br/> <p className='btn btn-primary'>{printStores(results.stores)}</p></p>
+                    <button className='btn btn-danger'>Add to Wishlist</button>
 
                 </div>
             </div>
