@@ -27,8 +27,10 @@ const userSchema = new Schema({
   ],
   wishlist: [
     {
-      type: Number,
-      required: true,
+      gameId: {
+        type: Number,
+        required: true,
+      }
     }
   ],
 });
