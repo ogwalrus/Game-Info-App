@@ -55,14 +55,14 @@ export const ADD_COMMENT = gql`
   }
 `;
 
-export const ADD_WISHLIST = gql`
-  mutation addWishlist($gameId: Integer!) {
-    addWishlist(gameId: $gameId) {
-        _id
-        username
-        wishlist {
-          _id
-      }
-    }
-  }
-  `;
+// export const ADD_WISHLIST = gql`
+//   mutation addWishlist($gameId: Integer!) {
+//     addWishlist(gameId: $gameId) {
+//         _id
+//         username
+//         wishlist {
+//           _id
+//       }
+//     }
+//   }
+//   `;

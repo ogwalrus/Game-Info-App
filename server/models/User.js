@@ -25,14 +25,14 @@ const userSchema = new Schema({
       ref: 'Thought',
     },
   ],
-  wishlist: [
-    {
-      gameId: {
-        type: Number,
-        required: true,
-      }
-    }
-  ],
+  // wishlist: [
+  //   {
+  //     gameId: {
+  //       type: Number,
+  //       required: true,
+  //     }
+  //   }
+  // ],
 });
 
 userSchema.pre('save', async function (next) {
