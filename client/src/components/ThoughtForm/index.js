@@ -25,7 +25,6 @@ const ThoughtForm = () => {
         console.error(e);
       }
 
-      // update me object's cache
       const { me } = cache.readQuery({ query: QUERY_ME });
       cache.writeQuery({
         query: QUERY_ME,
@@ -62,14 +61,14 @@ const ThoughtForm = () => {
 
   return (
     <div>
-      <h3>Add to your wishlist</h3>
+      <h3 className='cen'>Add to your wishlist</h3>
 
       {Auth.loggedIn() ? (
         <>
-          <p>Add to your wishlist by clicking any of the games.</p>
+          <p className='cen'>Add to your wishlist by clicking any of the games.</p>
         </>
       ) : (
-        <p>
+        <p className='cen'>
           You must login or signup to add to your wishlist. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
