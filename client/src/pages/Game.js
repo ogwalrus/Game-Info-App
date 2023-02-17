@@ -12,6 +12,7 @@ import { ADD_WISHLIST } from '../utils/mutations';
 import { QUERY_THOUGHTS } from '../utils/queries';
 import searchGame from '../utils/gameCall';
 import { useMutation } from '@apollo/client';
+import Auth from '../utils/auth';
 
 function Game() {
     // const [ addWishlist, { error } ] = useMutation(ADD_WISHLIST);
@@ -51,6 +52,13 @@ function Game() {
         return (
             <main>
                 <h1 className="display-1">Game with id {gameId} is not found</h1>
+            </main>
+        );
+    }
+    if (!Auth.loggedIn()){
+        return (
+            <main>
+                <h1 className="display-1" style={{color: 'green'}}>You must be logged in to view game data and add to your wishlist!</h1>
             </main>
         );
     }
