@@ -8,8 +8,6 @@ import Auth from '../utils/auth';
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
-
-  // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -19,7 +17,6 @@ const Login = (props) => {
     });
   };
 
-  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -33,7 +30,6 @@ const Login = (props) => {
       console.error(e);
     }
 
-    // clear form values
     setFormState({
       email: '',
       password: '',
@@ -42,7 +38,6 @@ const Login = (props) => {
 
   return (
     <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
         <div className="card">
           <h4 className="card-header bg-dark text-light p-2">Login</h4>
           <div className="card-body">
@@ -86,7 +81,6 @@ const Login = (props) => {
             )}
           </div>
         </div>
-      </div>
     </main>
   );
 };

@@ -44,7 +44,6 @@ function Game() {
             });
             console.log(data);
         } catch (e) {
-            // console.error(e);
         }
     }
     
@@ -68,13 +67,13 @@ function Game() {
                         {results.description_raw}
                     </p>
 
-                    <a className="card-text" href={results.website} target='_blank'> Website: {results.website}</a>
+                    <a className="card-text" href={results.website} target='_blank'> Website : <p className='btn btn-primary'>{results.website}</p></a>
                     
-                    <p className="card-text">Rating: {results.rating}/{results.rating_top}</p>
-                    <p className="card-text">Release Date: {results.released}</p>
-                    <p className="card-text">Playtime: {results.playtime}</p>
-                    <p className="card-text">Metacritic: {results.metacritic}</p>
-                    <p className='card-text '>Where to buy:<br/> <p className='btn btn-primary'>{printStores(results.stores)}</p></p>
+                    <p className="card-text">Rating : {results.rating}/{results.rating_top}</p>
+                    <p className="card-text">Release Date : {results.released}</p>
+                    <p className="card-text">Playtime : {results.playtime}</p>
+                    <p className="card-text">Metacritic : {results.metacritic}</p>
+                    <p className='card-text '>Where to buy :<br/> <p className='btn btn-primary'>{printStores(results.stores)}</p></p>
                     <button className='btn btn-danger ' onClick={ handleClick }>Add to Wishlist</button>
 
                 </div>

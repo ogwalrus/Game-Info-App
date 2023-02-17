@@ -17,7 +17,7 @@ const Profile = () => {
   });
 
   const user = data?.me || data?.user || {};
-  // navigate to personal profile page if username is yours
+
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/me" />;
   }
@@ -46,7 +46,6 @@ const Profile = () => {
           These are the games you have in your wishlist:
           
           </div>
-        {/* )} */}
       </div>
     </div>
   );
