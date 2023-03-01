@@ -22,7 +22,7 @@ const Header = () => {
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light btn btn-primary" to="/">
-            <h1 className="m-0"><img className='icon-img' src='https://icon-library.com/images/mix_color_5__game-512_97495.png'></img>4RealGamerz</h1>
+            <h1 className="m-0"><img className='icon-img' src='https://icon-library.com/images/mix_color_5__game-512_97495.png'></img>4RealGamers</h1>
           </Link>
           <p className="m-0">Get into the mind of a gamer.</p>
         </div>
